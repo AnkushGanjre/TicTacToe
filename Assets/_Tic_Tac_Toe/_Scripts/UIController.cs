@@ -102,6 +102,17 @@ namespace DonzaiGamecorp.TicTacToe
             FusionManager.Instance.Runner.Shutdown();
         }
 
+        public void DisplayRematchButton()
+        {
+            StartCoroutine(DisplayRematchBtn());
+        }
+
+        private IEnumerator DisplayRematchBtn()
+        {
+            yield return new WaitForSeconds(2f);
+            GameRematchButton.gameObject.SetActive(true);
+        }
+
         private void OnRematchRequest()
         {
             if (FusionManager.Instance.Runner.IsServer)

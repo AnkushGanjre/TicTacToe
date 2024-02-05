@@ -67,7 +67,6 @@ namespace DonzaiGamecorp.TicTacToe
 
             _playerNameDisplayText.text = _playerDataManager.NickName;
             _playerDisplayAvatar.sprite = _playerAvatarList.GetChild(_playerDataManager.PlayerAvatarNum).GetComponent<Image>().sprite;
-            //OnAvatarClicked(_playerDataManager.PlayerAvatarNum);
 
             _playerIndoEditBtn.onClick.AddListener(() => { OnPlayerEditBtnClick(); });
             _playerIndoEditSubmitBtn.onClick.AddListener(() => { OnSubmitBtnClicked(); });

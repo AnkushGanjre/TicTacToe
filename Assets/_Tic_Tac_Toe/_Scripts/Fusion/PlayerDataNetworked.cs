@@ -148,7 +148,7 @@ namespace DonzaiGamecorp.TicTacToe
             {
                 UIController.Instance.GameInfoText.text = "You Lost";
             }
-            UIController.Instance.GameRematchButton.gameObject.SetActive(true);
+            UIController.Instance.DisplayRematchButton();
         }
 
         [Rpc(RpcSources.InputAuthority, RpcTargets.All)]
@@ -165,14 +165,14 @@ namespace DonzaiGamecorp.TicTacToe
             {
                 UIController.Instance.GameInfoText.text = "You Won";
             }
-            UIController.Instance.GameRematchButton.gameObject.SetActive(true);
+            UIController.Instance.DisplayRematchButton();
         }
 
         [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
         public void RPC_DrawCallByHost(RpcInfo info = default)
         {
             UIController.Instance.GameInfoText.text = "Draw";
-            UIController.Instance.GameRematchButton.gameObject.SetActive(true);
+            UIController.Instance.DisplayRematchButton();
             if (_runnerInstance.IsServer)
             {
                 lastGame = 1;
@@ -183,7 +183,7 @@ namespace DonzaiGamecorp.TicTacToe
         public void RPC_DrawCallByClient(RpcInfo info = default)
         {
             UIController.Instance.GameInfoText.text = "Draw";
-            UIController.Instance.GameRematchButton.gameObject.SetActive(true);
+            UIController.Instance.DisplayRematchButton();
             if (_runnerInstance.IsServer)
             {
                 lastGame = 2;
